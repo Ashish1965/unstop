@@ -4,14 +4,17 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 const Layout = (props) => {
   return (
+<div className="flex flex-col h-screen">
+      <div className="w-screen">
+        <Navbar />
+      </div>
+      <Toaster position="top-center"/>
+      <div className="flex-grow">{props.children}</div>
 
-        <>
-        <Navbar/>
-          {props.children}
-          
-          <Toaster position="top-center" />
-          <Footer/>
-        </>
+      <div className="w-screen">
+        <Footer />
+      </div>
+    </div>
       );
   
 }
